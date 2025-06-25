@@ -1,0 +1,172 @@
+ /* Reset some defaults */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Header container */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #57a2ec; /* deep navy blue */
+    color: white;
+    flex-wrap: wrap;
+  }
+  
+  /* Logo section */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo img {
+    height: 46px;
+    border-radius: 23px;
+  }
+  
+  .logo h4 {
+    font-size: 1rem;
+    font-weight: 600; /* Made bolder for better 3D appearance */
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  
+    /* 3D Text Shadow Layers */
+    text-shadow:
+      2px 2px 0 #d4103b,        /* Light red/pink shadow */
+      4px 4px 0 #900c2f,        /* Deeper red shadow */
+      6px 6px 5px rgba(0, 0, 0, 0.5);  /* Black blurred shadow for depth */
+  }  
+  
+  /* Navigation tabs */
+  .nav-tabs {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .tab {
+    background: #172431;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .tab.active {
+    background-color: #d47636; /* orange for active tab */
+  }
+  
+  /* Search bar */
+  .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .search-bar input {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: none;
+    min-width: 220px;
+  }
+  
+  .search-btn {
+    padding: 8px 12px;
+    background-color: #ff8e24;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+  
+  
+  .date-channel-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 15px 30px;
+    border-bottom: 1px solid #ddd;
+    flex-wrap: wrap;
+  }
+  
+  /* Date Controls */
+  .date-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .nav-btn {
+    padding: 8px 15px;
+    background-color: #0055aa;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .today-label {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Channel Dropdown */
+.channel-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+#channel-select {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: #f4f4f4;
+  background-color:#172431;
+}
+
+.schedule-section {
+  padding: 20px 30px;
+  background-color: #ffffff;transition: all 0.3s ease-in-out;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+thead {
+  background-color: #003366;
+  color: white;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+  vertical-align: middle;
+}
+
+td i {
+  margin-right: 8px;
+  color: #ff6600; /* icon color */
+}
+
+.channel-logo {
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+

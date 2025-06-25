@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Broadcast Planner</title>
+
+  <!-- Font Awesome for Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/styles/index.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/logo.png" type="image/png" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      <img src="/assets/logo.png" alt="Broadcast Planner Logo" />
+      <h4>Broadcast Planner</h4>
+    </div>
+
+    <nav class="nav-tabs">
+      <button class="tab active">TV Schedule</button>
+      <button class="tab">Radio Schedule</button>
+    </nav>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Search program or channel..." />
+      <button class="search-btn">🔍</button>
+    </div>
+  </header>
+
+  <!-- NAVIGATION BELOW HEADER -->
+  <section class="date-channel-nav">
+    <div class="date-controls">
+      <button class="nav-btn">&larr; Previous Day</button>
+      <span class="today-label">Today</span>
+      <button class="nav-btn">Next Day &rarr;</button>
+    </div>
+
+    <div class="channel-filter">
+      <label for="channel-select">Channel:</label>
+      <select id="channel-select">
+        <option value="all">All Channels</option>
+        <option value="nta">NTA</option>
+        <option value="channels">Channels TV</option>
+        <option value="bbc">BBC</option>
+        <option value="supersport">SuperSport</option>
+        <option value="soundcity">SoundCity</option>
+        <option value="beatfm">Beat FM</option>
+        <option value="coolfm">Cool FM</option>
+        <option value="raypower">Raypower</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- TV Schedule -->
+  <section id="tv-schedule" class="schedule-section">
+    <h2>📺 TV Schedule</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Program Title</th>
+          <th>Channel</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>6:00 AM</td>
+          <td><i class="fas fa-newspaper"></i> Morning News</td>
+          <td><img src="assets/logos/nta.png" alt="NTA" class="channel-logo" /> NTA</td>
+        </tr>
+        <tr>
+          <td>7:00 AM</td>
+          <td><i class="fas fa-mug-hot"></i> Breakfast Show</td>
+          <td><img src="assets/logos/channels.png" alt="Channels TV" class="channel-logo" /> Channels TV</td>
+        </tr>
+        <tr>
+          <td>8:00 AM</td>
+          <td><i class="fas fa-futbol"></i> Sports Update</td>
+          <td><img src="assets/logos/supersport.png" alt="SuperSport" class="channel-logo" /> SuperSport</td>
+        </tr>
+        <tr>
+          <td>9:00 AM</td>
+          <td><i class="fas fa-film"></i> Family Movie: The Journey</td>
+          <td><img src="assets/logos/nta.png" alt="NTA" class="channel-logo" /> NTA</td>
+        </tr>
+        <tr>
+          <td>10:00 AM</td>
+          <td><i class="fas fa-book"></i> Documentary: Wild Africa</td>
+          <td><img src="assets/logos/bbc.png" alt="BBC" class="channel-logo" /> BBC</td>
+        </tr>
+        <tr>
+          <td>7:00 PM</td>
+          <td><i class="fas fa-tv"></i> Prime Time Drama</td>
+          <td><img src="assets/logos/africamagic.png" alt="Africa Magic" class="channel-logo" /> Africa Magic</td>
+        </tr>
+        <tr>
+          <td>8:00 PM</td>
+          <td><i class="fas fa-futbol"></i> Football Live</td>
+          <td><img src="assets/logos/supersport.png" alt="SuperSport" class="channel-logo" /> SuperSport</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Radio Schedule -->
+  <section id="radio-schedule" class="schedule-section" style="display: none;">
+    <h2>📻 Radio Schedule</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Program Title</th>
+          <th>Station</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>6:00 AM</td>
+          <td><i class="fas fa-microphone"></i> Early Morning Worship</td>
+          <td><img src="assets/logos/beatfm.png" alt="Beat FM" class="channel-logo" /> Beat FM</td>
+        </tr>
+        <tr>
+          <td>7:00 AM</td>
+          <td><i class="fas fa-music"></i> Sunrise Music</td>
+          <td><img src="assets/logos/coolfm.png" alt="Cool FM" class="channel-logo" /> Cool FM</td>
+        </tr>
+        <tr>
+          <td>8:00 AM</td>
+          <td><i class="fas fa-podcast"></i> Daily News Digest</td>
+          <td><img src="assets/logos/raypower.png" alt="Raypower" class="channel-logo" /> Raypower</td>
+        </tr>
+        <tr>
+          <td>10:00 PM</td>
+          <td><i class="fas fa-headphones"></i> Radio Vibes (Simulcast)</td>
+          <td><img src="assets/logos/beatfm.png" alt="Beat FM" class="channel-logo" /> Beat FM</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- JavaScript for Tab Switching -->
+  <script>
+    const tvTab = document.querySelector('.tab:nth-child(1)');
+    const radioTab = document.querySelector('.tab:nth-child(2)');
+    const tvSchedule = document.getElementById('tv-schedule');
+    const radioSchedule = document.getElementById('radio-schedule');
+
+    tvTab.addEventListener('click', () => {
+      tvTab.classList.add('active');
+      radioTab.classList.remove('active');
+      tvSchedule.style.display = 'block';
+      radioSchedule.style.display = 'none';
+    });
+
+    radioTab.addEventListener('click', () => {
+      radioTab.classList.add('active');
+      tvTab.classList.remove('active');
+      radioSchedule.style.display = 'block';
+      tvSchedule.style.display = 'none';
+    });
+  </script>
+</body>
+</html>

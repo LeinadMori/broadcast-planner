@@ -1,0 +1,22 @@
+
+
+.about-page h2, .program-detail h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #003366;
+  }
+  
+  .about-page ul, .program-detail ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .about-page li, .program-detail li {
+    margin: 10px 0;
+    font-size: 1rem;
+  }
+  
+  .about-page li i, .program-detail li i {
+    margin-right: 8px;
+    color: #ff8e24;
+  }

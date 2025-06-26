@@ -116,6 +116,7 @@
   .today-label {
     font-weight: bold;
     font-size: 1.1rem;
+    cursor: pointer;
 }
 
 /* Channel Dropdown */
@@ -155,13 +156,16 @@ thead {
 th, td {
   padding: 12px 15px;
   text-align: left;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #d88f8f;
   vertical-align: middle;
+  cursor: pointer;
+  
 }
 
 td i {
   margin-right: 8px;
   color: #ff6600; /* icon color */
+  
 }
 
 .channel-logo {

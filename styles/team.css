@@ -1,0 +1,24 @@
+/* Team Page */
+.team
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+  }
+  
+  .member, .team-member {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  }
+  
+  .member img, .team-member img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }

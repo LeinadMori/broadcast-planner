@@ -191,6 +191,15 @@
     cursor: pointer;
 }
 
+
+.rating span {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: gray;
+}
+.rating span.active {
+  color: rgb(233, 8, 147);
+}
 /* Channel Dropdown */
 .channel-filter {
   display: flex;
@@ -247,8 +256,99 @@ td i {
 }
 
 
+.add-schedule-container {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.add-schedule-btn {
+  background-color: #ff8e24;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-schedule-btn:hover {
+  background-color: #924700;;
+  transform: scale(1.05);
+}
 
 
+
+.site-footer {
+  background-color: #172431;
+  color: #f4f4f4;
+  padding: 30px 20px;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  margin: 0 12px;
+  color: #f4f4f4;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-social a {
+  margin: 0 10px;
+  color: #ff8e24;
+  font-size: 1.4rem;
+  transition: transform 0.2s ease;
+}
+
+.footer-social a:hover {
+  transform: scale(1.2);
+}
+
+.footer-copy {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+#backToTop {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #003366;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+.live-now {
+  background-color: #ffe0e0;
+  font-weight: bold;
+}
+.live-label {
+  color: red;
+  margin-left: 8px;
+  font-size: 0.65rem;
+}
 .contact-form {
   display: flex;
   flex-direction: column;

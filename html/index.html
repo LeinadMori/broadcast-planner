@@ -38,6 +38,15 @@
     </div>
     <span id="no-results" style="display: none; color: red; margin-top: 10px;">No matching programs or stations found.</span>
 
+    <label for="genre-select">Genre:</label>
+<select id="genre-select">
+  <option value="all">All Genres</option>
+  <option value="news">News</option>
+  <option value="sports">Sports</option>
+  <option value="music">Music</option>
+  <option value="drama">Drama</option>
+  <option value="talk">Talk</option>
+</select>
     <div class="theme-toggle">
       <button id="theme-toggle-btn" title="Toggle Light/Dark Mode">🌙 Dark Mode</button>
     </div>
@@ -46,11 +55,11 @@
   <!-- NAVIGATION BELOW HEADER -->
   <section class="date-channel-nav">
     <div class="date-controls">
-      <button class="nav-btn">&larr; Previous Day</button>
-      <span class="today-label">Today</span>
-      <button class="nav-btn">Next Day &rarr;</button>
+      <button class="nav-btn" id="prev-day">&larr; Previous Day</button>
+      <span class="today-label" id="current-day-label">Today</span>
+      <button class="nav-btn" id="next-day">Next Day &rarr;</button>
     </div>
-
+    
     <div class="channel-filter">
       <label for="channel-select">Channel:</label>
       <select id="channel-select">
@@ -82,6 +91,8 @@
           <th>Time</th>
           <th>Program Title</th>
           <th>Channel</th>
+          <th>Rating</th>
+          
         </tr>
       </thead>
       <tbody>
@@ -92,9 +103,16 @@
             <i class="fas fa-newspaper"></i>
             <a href="/html/Morning-Program.html" class="program-link">Morning News</a>
           </td>
+          
+          </td>
           <td>
             <img src="/assets/Logos/Nta.jpeg" alt="NTA" class="channel-logo"/> NTA
           </td>
+          <td>
+            <i class="fas fa-newspaper"></i> Morning News
+            <div class="rating" data-title="Morning News" data-time="6:00 AM">
+              <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+            </div>
         </tr>
         <td>7:00 AM</td>
         <td>
@@ -103,6 +121,12 @@
         </td>
         <td>
           <img src="/assets/Logos/Channels.jpeg" alt="NTA" class="channel-logo" />Channels Tv
+        </td>
+        <td>
+          <i class="fas fa-newspaper"></i> Breakfast Show
+          <div class="rating" data-title="Morning News" data-time="6:00 AM">
+            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+          </div>
         </td>
       </tr>
       <tr>
@@ -114,6 +138,11 @@
         <td>
           <img src="/assets/Logos/Nta.jpeg" alt="NTA" class="channel-logo" /> NTA
         </td>
+        <td>
+          <i class="fas fa-film"></i> Family Movie:The Journey
+          <div class="rating" data-title="Morning News" data-time="6:00 AM">
+            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+          </div>
       </tr>
       <tr>
         <td>10:00 AM</td>
@@ -124,6 +153,11 @@
         <td>
           <img src="/assets/Logos/BBC.jpeg" alt="NTA" class="channel-logo" /> BBC
         </td>
+        <td>
+          <i class="fas fa-book"></i> Documentary:World Life
+          <div class="rating" data-title="Morning News" data-time="6:00 AM">
+            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+          </div>
       </tr>
       <tr>
         <td>7:00 PM</td>
@@ -134,6 +168,11 @@
         <td>
           <img src="/assets/Logos/AfricaMagic.jpeg" alt="NTA" class="channel-logo" /> AfricaMagic
         </td>
+        <td>
+          <i class="as fa-tv"></i> Prime Time Drama
+          <div class="rating" data-title="Morning News" data-time="6:00 AM">
+            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+          </div>
       </tr>
       <tr>
         <td>8:00 PM</td>
@@ -144,6 +183,11 @@
         <td>
           <img src="/assets/Logos/SuperSport.jpeg" alt="NTA" class="channel-logo" /> SuperSport
         </td>
+        <td>
+          <i class="fas fa-futbol"></i> Football Live
+          <div class="rating" data-title="Morning News" data-time="6:00 AM">
+            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+          </div>
       </tr>
       <tr>
         <td>3:00 PM</td>
@@ -154,6 +198,11 @@
         <td>
           <img src="/assets/Logos/GameTv.jpeg" alt="NTA" class="channel-logo" /> Naija Game
         </td>
+        <td>
+          <i class="fas fa-gamepad"></i> Gaming Central
+          <div class="rating" data-title="Morning News" data-time="6:00 AM">
+            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+          </div>
       </tr>
       <tr>
         <td>1:00 PM</td>
@@ -164,6 +213,11 @@
         <td>
           <img src="/assets/Logos/TechTv.png" alt="NTA" class="channel-logo" /> Tech+ Tv
         </td>
+        <td>
+          <i class="fas fa-laptop-code"></i> Tech World
+          <div class="rating" data-title="Morning News" data-time="6:00 AM">
+            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+          </div>
       </tr>
         <!-- Add more rows similarly -->
       </tbody>
@@ -179,6 +233,7 @@
           <th>Time</th>
           <th>Program Title</th>
           <th>Station</th>
+          <th>Rating</th>
         </tr>
       </thead>
       <tbody>
@@ -191,6 +246,11 @@
           <td>
             <img src="/assets/Logos/BeatFm.png" alt="NTA" class="channel-logo" />  Beat FM
           </td>
+          <td>
+            <i class="fas fa-headphones"></i> Early Morning Worship
+            <div class="rating" data-title="Morning News" data-time="6:00 AM">
+              <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+            </div>
           <tr>
             <td>7:00 AM</td>
             <td>
@@ -200,6 +260,11 @@
             <td>
               <img src="/assets/Logos/CoolFm.png" alt="NTA" class="channel-logo" />  cool Fm
             </td>
+            <td>
+              <i class="fas fa-music"></i> Sunrise Music
+              <div class="rating" data-title="Morning News" data-time="6:00 AM">
+                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+              </div>
           </tr>
         <tr>
           <td>8:00 AM</td>
@@ -210,6 +275,11 @@
           <td>
             <img src="/assets/Logos/RayPower.png" alt="NTA" class="channel-logo" />  Raypower
           </td>
+          <td>
+            <i class="fas fa-podcast"></i> Daily News Digest
+            <div class="rating" data-title="Morning News" data-time="6:00 AM">
+              <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+            </div>
         </tr>
         <tr>
           <td>10:00 PM</td>
@@ -220,12 +290,40 @@
           <td>
             <img src="/assets/Logos/BeatFm.png" alt="NTA" class="channel-logo" />  Beat Fm
           </td>
+          <td>
+            <i class="fas fa-headphone"></i>  Radio Vibes (Simulcast)
+            <div class="rating" data-title="Morning News" data-time="6:00 AM">
+              <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+            </div>
         </tr>
         <!-- Add more rows similarly -->
       </tbody>
     </table>
   </section>
-
+  <div class="add-schedule-container">
+    <button class="add-schedule-btn">
+      <i class="fas fa-plus-circle"></i> Add Schedule
+    </button>
+  </div>
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="/html/about.html">About</a>
+        <a href="program.html">Programs</a>
+        <a href="/html/contact-form.html">Contact</a>
+        <a href="/html/team.html">Team</a>
+      </div>
+  
+      <div class="footer-social">
+        <a href="https://twitter.com/Broadcast_Planner" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://facebook.com/Broadcast_Planner" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://instagram.com/Broadcast_Planner" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://youTube.com/Broadcast_Planner" title="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+      <button id="backToTop">⬆️ Back to Top</button>
+      <p class="footer-copy">© 2025 Broadcast Planner. All rights reserved.</p>
+    </div>
+  </footer>
   <!-- Scripts -->
   <script>
     // Tab Switching
@@ -316,6 +414,141 @@
         themeToggleBtn.textContent = '☀️ Light Mode';
       }
     });
+    tvTab.addEventListener('click', () => {
+  tvTab.classList.add('active');
+  radioTab.classList.remove('active');
+  tvSchedule.style.display = 'block';
+  radioSchedule.style.display = 'none';
+  channelSelect.value = 'all';
+});
+
+
+
+// --- Channel Filter Functionality ---
+const channelSelect = document.getElementById('channel-select');
+
+channelSelect.addEventListener('change', () => {
+  const selected = channelSelect.value;
+  const rows = document.querySelectorAll('tbody tr');
+
+  rows.forEach(row => {
+    const channelCell = row.cells[2]; // 3rd column is Channel
+    const channelName = channelCell.textContent.toLowerCase();
+
+    if (selected === 'all') {
+      row.style.display = '';
+    } else {
+      row.style.display = channelName.includes(selected.toLowerCase()) ? '' : 'none';
+    }
+  });
+});
+
+
+
+radioTab.addEventListener('click', () => {
+  radioTab.classList.add('active');
+  tvTab.classList.remove('active');
+  radioSchedule.style.display = 'block';
+  tvSchedule.style.display = 'none';
+  channelSelect.value = 'all';
+});
+
+
+tvTab.addEventListener('click', () => {
+  tvTab.classList.add('active');
+  radioTab.classList.remove('active');
+  tvSchedule.style.display = 'block';
+  radioSchedule.style.display = 'none';
+  channelSelect.value = 'all';
+});
+
+radioTab.addEventListener('click', () => {
+  radioTab.classList.add('active');
+  tvTab.classList.remove('active');
+  radioSchedule.style.display = 'block';
+  tvSchedule.style.display = 'none';
+  channelSelect.value = 'all';
+});
+
+
+
+function checkLivePrograms() {
+  const now = new Date();
+  const currentHour = now.getHours();
+
+  document.querySelectorAll('tbody tr').forEach((row) => {
+    const timeText = row.cells[0].textContent.trim();
+    const match = timeText.match(/^(\d{1,2}):(\d{2})\s?(AM|PM)$/i);
+
+    if (match) {
+      let [_, hour, minutes, period] = match;
+      hour = parseInt(hour);
+      minutes = parseInt(minutes);
+      if (period.toUpperCase() === 'PM' && hour !== 12) hour += 12;
+      if (period.toUpperCase() === 'AM' && hour === 12) hour = 0;
+
+      const rowHour = hour;
+      if (rowHour === currentHour) {
+        row.classList.add('live-now');
+        if (!row.querySelector('.live-label')) {
+          const liveTag = document.createElement('span');
+          liveTag.textContent = ' 🔴 LIVE';
+          liveTag.className = 'live-label';
+          row.cells[1].appendChild(liveTag);
+        }
+      }
+    }
+  });
+}
+
+checkLivePrograms();
+setInterval(checkLivePrograms, 60000); // Update every minute
+
+
+const genreSelect = document.getElementById('genre-select');
+genreSelect.addEventListener('change', () => {
+  const selectedGenre = genreSelect.value;
+  const rows = document.querySelectorAll('tbody tr');
+
+  rows.forEach(row => {
+    const genre = row.getAttribute('data-genre');
+    if (selectedGenre === 'all' || genre === selectedGenre) {
+      row.style.display = '';
+    } else {
+      row.style.display = 'none';
+    }
+  });
+});
+
+
+document.getElementById('backToTop').addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+
+document.querySelectorAll('.rating').forEach(rating => {
+  const stars = rating.querySelectorAll('span');
+  const title = rating.dataset.title;
+  const time = rating.dataset.time;
+
+  stars.forEach((star, index) => {
+    star.addEventListener('click', () => {
+      localStorage.setItem(`${title}-${time}-rating`, index + 1);
+      updateStars(stars, index + 1);
+    });
+
+    // Load saved rating
+    const saved = localStorage.getItem(`${title}-${time}-rating`);
+    if (saved) updateStars(stars, parseInt(saved));
+  });
+});
+
+function updateStars(stars, count) {
+  stars.forEach((star, i) => {
+    star.classList.toggle('active', i < count);
+  });
+}
+
   </script>
 </body>
 </html>

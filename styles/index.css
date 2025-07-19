@@ -313,9 +313,11 @@ td i {
 }
 
 .footer-social a {
-  margin: 0 10px;
+  margin: 0 12px;
   color: #ff8e24;
   font-size: 1.4rem;
+  text-decoration: none;
+  font-weight: 300;
   transition: transform 0.2s ease;
 }
 
